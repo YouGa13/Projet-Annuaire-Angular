@@ -6,7 +6,9 @@
      <br> 
      <div *ngIf="pers.telephone != null"
      >☎  {{pers.telephone}}</div>
+     {{pers.adresse | upperfirst}}
     </div>
+
      <button type="reset" (click)="traiterButonSupprimer(pers)">Supprimer</button>
 </div>
 

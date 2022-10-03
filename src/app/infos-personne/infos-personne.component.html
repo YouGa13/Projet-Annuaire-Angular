@@ -1,0 +1,13 @@
+{{pers.prenom | upperfirst}}
+{{pers.nom | uppercase}}
+{{pers.adresse}}
+
+
+<br>
+<div *ngIf="pers.telephone ">
+    // inserer un caracter de telephone
+    &#9742; {{ pers.telephone }}
+</div>
+<div *ngIf="pers.adresse">
+    {{pers.adresse}}
+</div>

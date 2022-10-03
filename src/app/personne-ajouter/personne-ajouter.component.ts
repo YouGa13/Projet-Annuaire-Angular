@@ -16,12 +16,13 @@ export class PersonneAjouterComponent implements OnInit {
 
   ngOnInit(): void {
   }
-;
+
 
   traiterFormulaire(form: NgForm) {
     console.log(form);
     this.ps.ajouterPersonne(this.formValueVersPersonne(form.value)).subscribe(
-      (p:Personne) => {console.log() }
+      (p:Personne) => {console.log(p) 
+      console.log(form.value)}
     );
     this.dernierNom = form.value.nom;
     form.reset();
@@ -32,7 +33,8 @@ export class PersonneAjouterComponent implements OnInit {
     return {
       nom: formValue.nom,
       prenom: formValue.prenom,
-      telephone: formValue.telephone
+      telephone: formValue.telephone,
+      adresse: formValue.adresse
     } as Personne;
   }
 }

@@ -1,65 +1,73 @@
-#personne {
+div {
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    }
-form {
-    color: darkblue;
-    border: 2px solid darkblue;
-    width: 30%;
-    height: 400px;
-    padding: 2em;
-    background-color: blanchedalmond;
-    }
-    
-input[type=text] {
+  }
+  
+  
+  input[type=text] {
     border: none;
-    border-bottom: 2px solid red;
-    background-color: bisque;
+    border-bottom: 2px solid rgb(84, 150, 84);
+    background-color: #e3e9ee;
     outline: none;
-    }
-    
-label {
-    padding: 1em 1em 0 0;
-    display: inline-block;
-    color: darkblue;
-    margin-bottom: 10px;
-    }
-    
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 1em 1em;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    float: right;
-    font-size: larger;
-    }
-    
-button:hover {
-    background-color: red;
-    }
-    
-.info {
-    font-size: medium;
+  }
+  .matInput {
+    color: black;
+  }
+  
+  .label {
+    color: black;
+    background-color: cadetblue;
+  }
+  
+  button {
+    position: relative;
+    top: 80px;
+    margin-left: 20px;
+    width: 90%;
+  }
+  
+  button:hover {
+    background-color: #042e66;
+  }
+  
+  .info {
+    font-size: x-small;
     text-align: right;
-    }
-    
-input:invalid {
-    border: 2px solid red;
-    }
-    
-.alert {
-    margin:50px;
+  }
+  
+  input:invalid {
+    border-bottom: 2px solid rgb(207, 86, 86);
+  }
+  
+  .alert {
+    margin: 0;
     padding: 0;
     font-size: x-small;
     text-align: left;
     color: darkgray;
-
-    }
-.alert div {
+  }
+  
+  .alert div {
     margin: 0;
     padding: 0;
-    }
+  }
+  
+  .container {
+    margin: 50px;
+    background-color: #a1bcd3;
+  }
+  
+  
+  mat-form-field {
+    background-color: #e3e9ee;
+    margin: 20px;
+  }
+  
+  .input-form {
+    width: 90%;
+  }
+
+  .formOption {
+    color: black;
+    background-color: blanchedalmond;
+  }

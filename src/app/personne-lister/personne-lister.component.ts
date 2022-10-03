@@ -9,7 +9,7 @@ import { PersonneService } from '../services/personne.service';
 })
 export class PersonneListerComponent implements OnInit {
 
-
+personneSelected !:Personne;
   personnesAAfficher: Personne[] = [];
 
   constructor(private ps: PersonneService) {

@@ -3,3 +3,22 @@
     <app-personne-detail [pers]="p" (suppressionPersonneEvent)="traiterSuppressionPersonne($event)" [numero]="i">
     </app-personne-detail>
 </div>
+
+
+<mat-card *ngIf="personneSelected" class="infos-personne">
+   <app-infos-personne [pers]="personneSelected"></app-infos-personne>
+</mat-card>
+
+<!--
+<div *ngFor="let p of personnesAAfficher ; index as i" class="etiquette">
+    
+   <app-personne-detail
+   (click)="afficherDetails(p) " (suppressionPersonneEvent)="traiterSuppressionPersonne($event)" 
+   [pers]="p"
+   [numero]="i">
+</app-personne-detail>
+</div>
+afficher un objet au format json
+{{personnesAAfficher | json}}
+
+-->

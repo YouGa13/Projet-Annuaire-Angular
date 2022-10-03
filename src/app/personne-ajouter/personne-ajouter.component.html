@@ -1,21 +1,64 @@
-<h3>Ajouter une personne</h3>
-<div id="personne">
-    <form #f="ngForm" (submit)="traiterFormulaire(f)">
+<mat-card class="container">
+  <h1>Ajouter un personne</h1>
 
-        <div class="alert"><label for="nom"><span class="info">Nom</span></label>
-            <div> <input type="text" name="nom" ngModel #champNom="ngModel" required minlength="2" maxlength="50"></div>
-        </div>
-        <div class="alert"> <div *ngIf="champNom.invalid ">
-            le nom n'est pas correct
-        </div></div>
-        <div class="alert"><label for="prenom"><span class="info">Prénom</span></label>
-            <div> <input type="text" name="prenom" ngModel></div>
-        </div>
-        <div class="alert"><label for="telephone"><span class="info">Telephone</span></label>
-            <div> <input type="text" name="telephone" ngModel ></div>
-        </div>
+  <form #f="ngForm" (ngSubmit)="traiterFormulaire(f)">
+    <div fxLayout="row" fxFlexFill>
+      <div fxFlex="50">
+        <mat-form-field class="input-form" appearance="fill">
 
-        <button type="submit" [hidden]="f.invalid">Ajouter</button>
-    </form>
-</div>
-<div *ngIf="dernierNom">{{ dernierNom }}  été ajouté</div>
+          <mat-label class="label" for="civilite">Civilité:</mat-label>
+          <mat-select name="civilite" ngModel>
+            <mat-option class="formOption" value="">--Choisissez un option--</mat-option>
+            <mat-option class="formOption" value="Mme">Mme</mat-option>
+            <mat-option class="formOption" value="Mr">Mr</mat-option>
+            <mat-option class="formOption"  value="Dr">Dr</mat-option>
+            <mat-option class="formOption"  value="Pr">Pr</mat-option>
+          </mat-select>
+
+        </mat-form-field>
+        <mat-form-field class="input-form" appearance="fill">
+
+          <mat-label class="label">Nom :</mat-label>
+          <input class="matInput" matInput type="text" name="nom" ngModel required minlength="2" maxlength="50" #champNom="ngModel">
+
+          <div class="alert">
+            <div *ngIf="champNom.invalid && (champNom.dirty || champNom.touched)">Le nom n'est pas correct</div>
+            <div *ngIf="champNom.errors?.['required']">Le nom est obligatoire</div>
+            <div *ngIf="champNom.errors?.['minlength']">Le Le nom doit comporter au moins 2 caractères</div>
+          </div>
+        </mat-form-field>
+        <mat-form-field class="input-form" appearance="fill">
+
+          <mat-label class="label">Prenom :</mat-label>
+          <input class="matInput" matInput type="text" name="prenom" ngModel>
+
+        </mat-form-field>
+      </div>
+      <div fxFlex="50">
+        <mat-form-field class="input-form" appearance="fill">
+
+          <mat-label class="label">Téléphone :</mat-label>
+          <input class="matInput" matInput type="text" name="telephone" ngModel pattern="^(\d{2}\s){4}\d{2}$" #champTelephone="ngModel">
+
+          <div class="alert">
+            <div *ngIf="champTelephone.invalid && (champTelephone.dirty || champTelephone.touched)">Le Téléphone doit
+              etre
+              en
+              ce
+              format 00 00 00 00 00</div>
+          </div>
+        </mat-form-field>
+        <mat-form-field class="input-form" appearance="fill">
+
+          <mat-label class="label">adresse :</mat-label>
+          <input class="matInput" matInput type="text" name="adresse" ngModel>
+
+        </mat-form-field>
+
+        <button mat-raised-button type="submit" [hidden]="f.invalid">Ajouter</button>
+
+      </div>
+    </div>
+  </form>
+</mat-card>
+<div *ngIf="dernierNom">{{ dernierNom }} été ajouté</div>

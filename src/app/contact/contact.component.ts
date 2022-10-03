@@ -11,5 +11,12 @@ export class ContactComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  updateBackgroundColor(color : string){
+    const element =  document.getElementById("carteContact");
+    if (element) {
+      element.style.backgroundColor=color;
+    }
+    
+  }
 
 }
