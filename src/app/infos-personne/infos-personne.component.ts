@@ -9,7 +9,7 @@ import { Personne } from '../models/personne';
 export class InfosPersonneComponent implements OnInit {
 @Input() pers! : Personne;
   constructor() { }
-
+  
   ngOnInit(): void {
   }
 

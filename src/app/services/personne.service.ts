@@ -8,8 +8,8 @@ import { Personne } from '../models/personne';
 })
 export class PersonneService {
   // L'URL de l'API REST
- private personnesURL='http://localhost:3000/api/Personnes'
-private compteURL= 'http://localhost:3000/api/Personnes/count'
+ private personnesURL='http://[::1]:3000/personnes'
+private compteURL= 'http://[::1]:3000/personnes/count'
 
  // les options de l'entete des requetes HTTP
   private httpOptions = {

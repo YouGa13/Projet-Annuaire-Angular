@@ -27,10 +27,9 @@ personneSelected !:Personne;
     this.ps.getPersonnes().subscribe(
        (personnesPubliees: Personne[]) => {
         this.personnesAAfficher = personnesPubliees
-        console.log(personnesPubliees);
+        // console.log(personnesPubliees);
        }
     )
-
   }
 
   traiterSuppressionPersonne(personneASupprimer: Personne) {

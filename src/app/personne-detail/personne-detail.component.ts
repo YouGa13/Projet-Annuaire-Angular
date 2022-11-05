@@ -15,7 +15,7 @@ numero !: number;
 @Output()
 suppressionPersonneEvent = new EventEmitter<Personne>()
   constructor(private ps: PersonneService) { }
-
+  
   ngOnInit(): void {
   }
   traiterButonSupprimer(form: Personne) {
